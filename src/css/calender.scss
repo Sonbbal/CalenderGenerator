@@ -27,52 +27,76 @@
 // container
 .calender {
     width: 1024px;
+    padding:0 30px;
 }
-
+// month
 .month {
     width: 100%;
     text-align: center;
     padding:40px 0;
+    .size{ 
+        &-1 {
+            font-size: 1rem;   
+        }
+        &-2 {
+            font-size: 1.2rem;   
+           }
+        &-3 {
+            font-size: 1.5rem;   
+        }
+        &-4 {
+            font-size: 1.8rem;   
+        }
+        &-5 {
+            font-size: 2rem;
+        }
+        &-6 {
+            font-size: 2.2rem;
+        }
+        &-7 {
+            font-size: 2.4rem;
+        }
+        &-8 {
+            font-size: 2.6rem;
+        }
+        &-9 {
+            font-size: 2.8rem;
+        }
+        &-10 {
+            font-size: 3rem;
+        }
+    
+    }
+    .fonts{
+        &_UhBeeSeulvely{font-family: 'UhBeeSeulvely'};
+        &_UhBeepuding {font-family: 'UhBeepuding'};
+        &_UhBeeMiwan {font-family: 'UhBeeMiwan'};
+        &_MapoFlowerIsland {font-family: 'MapoFlowerIsland';}
+    }
 }
 
-// month font size
-.size{ 
-    &-1 {
-        font-size: 1rem;   
+// week 
+.week {
+    display: flex;
+    text-align: center;
+    margin: 0 30px;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    font-size: 18px;
+    & > div {
+        width: (100% /7) ;
     }
-    &-2 {
-        font-size: 1.2rem;   
-       }
-    &-3 {
-        font-size: 1.5rem;   
+    .sun {
+        color:red;
     }
-    &-4 {
-        font-size: 1.8rem;   
+    .sat {
+        color:blue;
     }
-    &-5 {
-        font-size: 2rem;
-    }
-    &-6 {
-        font-size: 2.2rem;
-    }
-    &-7 {
-        font-size: 2.4rem;
-    }
-    &-8 {
-        font-size: 2.6rem;
-    }
-    &-9 {
-        font-size: 2.8rem;
-    }
-    &-10 {
-        font-size: 3rem;
-    }
-
 }
 
-.fonts{
-    &_UhBeeSeulvely{font-family: 'UhBeeSeulvely'};
-    &_UhBeepuding {font-family: 'UhBeepuding'};
-    &_UhBeeMiwan {font-family: 'UhBeeMiwan'};
-    &_MapoFlowerIsland {font-family: 'MapoFlowerIsland';}
-}
+// fonts 
+.UhBeeSeulvely{font-family: 'UhBeeSeulvely'};
+.UhBeepuding {font-family: 'UhBeepuding'};
+.UhBeeMiwan {font-family: 'UhBeeMiwan'};
+.MapoFlowerIsland {font-family: 'MapoFlowerIsland';}

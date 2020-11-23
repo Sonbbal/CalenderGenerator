@@ -1,5 +1,6 @@
 import React from 'react';
 import Month from './Month';
+import Week from './Week';
 import styles from '../../css/calender.scss';
 
 const Calender = () => {
@@ -22,10 +23,28 @@ const Calender = () => {
                 ]
             }
         },
+        week: {
+            type:{
+                simpleKorean: ['일','월', '화','수','목','금','토'],
+                fullKorean: ['일요일','월요일','화요일','수요일','목요일','금요일','토요일'],
+                simpleEnglish: ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
+                fullEnglish: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Saturday']
+                },
+            font: {
+                size: 1,
+                family: {
+                    UhBeeSeulvely:'UhBeeSeulvely',
+                    UhBeepuding:'UhBeepuding',
+                    UhBeeMiwan:'UhBeeMiwan',
+                    MapoFlowerIsland:'MapoFlowerIsland'
+                }
+            }
+        }
     }
     return (
         <div className={styles.calender}>
             <Month data={data.month} type={1} font={1}/>
+            <Week data={data.week.type.fullKorean} font={data.week.font.family.UhBeepuding} />
         </div>
     )
 }

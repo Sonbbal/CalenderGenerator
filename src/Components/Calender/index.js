@@ -1,6 +1,7 @@
 import React from 'react';
 import Month from './Month';
 import Week from './Week';
+import Days from './Days';
 import styles from '../../css/calender.scss';
 
 const Calender = () => {
@@ -39,12 +40,26 @@ const Calender = () => {
                     MapoFlowerIsland:'MapoFlowerIsland'
                 }
             }
+        },
+        days: {
+            line: 5,
+            day: 30,
+            font: {
+                size: 1,
+                family: {
+                    UhBeeSeulvely:'UhBeeSeulvely',
+                    UhBeepuding:'UhBeepuding',
+                    UhBeeMiwan:'UhBeeMiwan',
+                    MapoFlowerIsland:'MapoFlowerIsland'
+                }
+            }
         }
     }
     return (
-        <div className={styles.calender}>
+        <div className='calender'>
             <Month data={data.month} type={1} font={1}/>
             <Week data={data.week.type.fullKorean} font={data.week.font.family.UhBeepuding} />
+            <Days line={data.days.line} day={data.days.day}/>
         </div>
     )
 }

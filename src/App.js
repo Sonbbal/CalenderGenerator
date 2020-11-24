@@ -1,7 +1,12 @@
+import React from 'react';
+import ControlPannel from "./Components/ControlPannel";
+import Calender from "./Components/Calender";
+
 function App() {
   return (
     <div className="App">
-      app
+      <ControlPannel />
+      <Calender />
     </div>
   );
 }

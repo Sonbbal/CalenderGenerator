@@ -10,7 +10,8 @@ $base :  #ece8ac;
     left: 20px;
     border-radius:30px;
     background-color: $base;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     .month {
         h4 {
             text-align: left;
@@ -93,9 +94,7 @@ $base :  #ece8ac;
     height: 90px;
     vertical-align: middle;
     line-height: 90px;
-    h4 {
-        
-    }
+    width: 2000px;
 }
 .number {
     display: flex;

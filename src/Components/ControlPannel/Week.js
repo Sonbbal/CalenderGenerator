@@ -29,7 +29,7 @@ const Week = () => {
     }
 
     return (
-        <div className="month">
+        <div className="week">
             <div className="title">
                 <h3>주</h3>
                 <Switch on={on} click={handleOn}/>

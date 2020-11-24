@@ -12,7 +12,7 @@ $base :  #ece8ac;
     background-color: $base;
     overflow-x: hidden;
     overflow-y: scroll;
-    .month {
+    .month , .week {
         h4 {
             text-align: left;
             margin-bottom: 10px;
@@ -111,6 +111,7 @@ $base :  #ece8ac;
         background: $base;
         line-height: 33px;
         cursor: pointer;
+        text-align: center;
         box-shadow:  5px 5px 10px #c9c592, 
              -5px -5px 10px #ffffc6;
              &:hover {

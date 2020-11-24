@@ -1,14 +1,14 @@
-export const Switch = () => {
+export const Switch = ( props ) => {
     return (
-        <span className="switch-container">
-            <span className="switch-thumb"></span>
+        <span className="switch-container" onClick={() => props.click()}>
+            <span className={ props.on ? `switch-thumb`: `switch-thumb off`}></span>
         </span>
     )
 }
 
-export const Button = ( props ) => {
+export const Button = ( props) => {
     return (
-        <div className="button-container">
+        <div className="button-container" onClick={()=>props.onClick(props.select)}>
             {
                 props.pressed ? 
                 <span className="button-pressed">
@@ -23,9 +23,29 @@ export const Button = ( props ) => {
     )
 }
 
-// export const Radio = () => {
-//     const arr = [1,2,3,4,5,6]
-//     return (
-
-//     )
-// }
+ export const ButtonSet = (props) => {
+    const data = props.data;
+    return (
+        <div className="buttons-container">
+            {
+                data.map(
+                    num => <Button 
+                    key={num} 
+                    onClick={props.onClick}
+                    pressed={num === props.type}
+                    select={num}
+                    >{num}</Button>
+                )
+            }
+        </div>
+   )
+}
+export const Number = (props) => {
+    return (
+        <div className="number">
+            <p>{props.num}</p>
+            <span className="number-btn" onClick={() => props.handleNumber(1)}>+</span>
+            <span className="number-btn" onClick={() => props.handleNumber(-1)}>-</span>
+        </div>
+    )
+}

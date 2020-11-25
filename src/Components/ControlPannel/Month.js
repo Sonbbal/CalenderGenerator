@@ -1,48 +1,49 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ButtonSet, Switch, Number } from './modules';
+import {connect} from 'react-redux';
 
 const Month = () => {
-    const [ on, setOn ] = useState(true);
-    const handleOn = () => {
-        setOn(!on)
-    }
+    // 월 스위치
+    const MonthSwitch = connect(
+        (state) => ({on:state.month.visible}),
+        (dispatch) => ({click: () => dispatch({type:'TOGGLE_VIEW_MONTH'})})
+    )(Switch);
+
+    // 월 타입
     const types = ['1', '1월', 'Jan', 'January']
-    const [type, setType] = useState(types[0]);
-    const handleType = ( type ) => {
-        setType(type);
-    }
+    const MonthType = connect(
+        (state) => ({data:types,type:state.month.text}),
+        (dispatch) => ({onClick: (text)=> dispatch({type:'CHANGE_MONTH_TYPE',text})})
+    )(ButtonSet);
+
+    // 월 폰트
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
-    const [font , setFont] = useState(fonts[0]);
-    const handleFont = ( font ) => {
-        setFont(font);
-    }
-    const [fontSize, setFontSize] = useState(1);
-    const handleSize = ( num ) => {
-        let number = fontSize + num;
-        if( number <= 0) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else if ( number >= 11 ) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else {
-            setFontSize(fontSize + num);
-        }
-    }
+    const MonthFont = connect(
+        (state) => ({data:fonts,type:state.month.font}),
+        (dispatch) => ({onClick: (font)=> dispatch({type:'CHANGE_MONTH_FONT',font})})
+    )(ButtonSet);
+    
+    // 월 폰트사이즈
+    const MonthFontSize = connect(
+        (state) => ({num:state.month.size}),
+        (dispatch) => ({handleNumber:(size) => dispatch({type:'CHANGE_MONTH_FONT_SIZE',size})})
+    )(Number);
 
     return (
         <div className="month">
             <div className="title">
                 <h3>월</h3>
-                <Switch on={on} click={handleOn}/>
+                <MonthSwitch />
             </div>
             <div className="type">
                 <h4>월 표시</h4>
-                <ButtonSet data={types} type={type} onClick={handleType} />
+                <MonthType />
             </div>
             <div className="font">
                 <h4>폰트</h4>
-                <ButtonSet data={fonts} type={font} onClick={handleFont} />
+                <MonthFont />
                 <h4>폰트크기</h4>
-                <Number num={fontSize} handleNumber={handleSize} />
+                <MonthFontSize />
             </div>
         </div>
     )

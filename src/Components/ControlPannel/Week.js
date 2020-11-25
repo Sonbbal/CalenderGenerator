@@ -1,52 +1,47 @@
 import React, {useState} from 'react';
+import { connect } from 'react-redux';
 import { ButtonSet, Switch, Number } from './modules';
 
 const Week = () => {
     // 온오프
-    const [ on, setOn ] = useState(true);
-    const handleOn = () => {
-        setOn(!on)
-    }
+    const WeekVisible = connect(
+        (state) => ({on:state.week.visible}),
+        (dispatch) => ({click:()=>dispatch({type:'TOGGLE_VIEW_WEEK'})})
+    )(Switch);
+    
     // 데이터 타입
     const types = ['일', '일요일', 'Sun', 'SunDay']
-    const [type, setType] = useState(types[0]);
-    const handleType = ( type ) => {
-        setType(type);
-    }
+    const WeekType = connect(
+        (state) => ({data:types,type:state.week.text}),
+        (dispatch) => ({onClick: (text) => dispatch({type:'CHANGE_WEEK_TYPE',text})})
+    )(ButtonSet);
     // 폰트 종류
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
-    const [font , setFont] = useState(fonts[0]);
-    const handleFont = ( font ) => {
-        setFont(font);
-    }
+    const WeekFont = connect(
+        (state) => ({data:fonts, type:state.week.font}),
+        (dispatch) => ({onClick: (font) => dispatch({type:'CHANGE_WEEK_FONT',font})})
+    )(ButtonSet);
     // 폰트 크기
-    const [fontSize, setFontSize] = useState(1);
-    const handleSize = ( num ) => {
-        let number = fontSize + num;
-        if( number <= 0) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else if ( number >= 11 ) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else {
-            setFontSize(fontSize + num);
-        }
-    }
+    const WeekFontSize = connect(
+        (state) => ({num:state.week.size}),
+        (dispatch) => ({handleNumber:(size) => dispatch({type:'CHANGE_WEEK_FONT_SIZE', size})})
+    )(Number);
 
     return (
         <div className="week">
             <div className="title">
                 <h3>주</h3>
-                <Switch on={on} click={handleOn}/>
+                <WeekVisible />
             </div>
             <div className="type">
                 <h4>주 표시</h4>
-                <ButtonSet data={types} type={type} onClick={handleType} />
+                <WeekType />
             </div>
             <div className="font">
                 <h4>폰트</h4>
-                <ButtonSet data={fonts} type={font} onClick={handleFont} />
+                <WeekFont />
                 <h4>폰트크기</h4>
-                <Number num={fontSize} handleNumber={handleSize} />
+                <WeekFontSize />
             </div>
         </div>
     )

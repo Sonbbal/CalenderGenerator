@@ -2,7 +2,7 @@ import React from 'react';
 import Month from './Month';
 import Week from './Week';
 import Days from './Days';
-import styles from '../../css/calender.scss';
+import '../../css/calender.scss';
 
 const Calender = () => {
     const data = {

@@ -7,7 +7,7 @@ export const CHANGE_WEEK_FONT_SIZE = 'CHANGE_WEEK_FONT_SIZE';
 //action 생성자
 
 export const toggleViewWeek = () => {
-    return ({ type: TOGGLE_VIEW_WEEK})
+    return ({type:TOGGLE_VIEW_WEEK})
 }
 export const changeWeekhType = (text) => {
     return ({

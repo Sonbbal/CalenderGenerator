@@ -1,34 +1,31 @@
-import React,{useState} from 'react'
+import React from 'react'
 import {ButtonSet,Number} from './modules';
+import {connect} from 'react-redux';
 
 const Day = () => {
+    // 일 폰트 
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
-    const [font , setFont] = useState(fonts[0]);
-    const handleFont = ( font ) => {
-        setFont(font);
-    }
+    const DayFont = connect(
+        (state) => ({data:fonts, type:state.day.font}),
+        (dispatch) => ({ onClick: (font) => dispatch({type:'CHANGE_DAY_FONT',font})})
+    )(ButtonSet);
 
-    const [line, setLine] = useState(1);
-    const handleLine = (num) => {
-        let number = line + num;
-        if( number <= 0) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else if ( number >= 11 ) {
-            alert('숫자는 1부터 10까지만 가능합니다.');
-        } else {
-            setLine(line + num);
-        }
-    }
+
+    // 일 줄수 
+    const DayLines = connect(
+        (state) => ({num:state.day.lines}),
+        (dispatch) => ({handleNumber: (lines) => dispatch({type:'CHANGE_DAY_LINES',lines})})
+    )(Number);
     return (
         <div className="day">
-            <h4>일</h4>
+            <h3>일</h3>
             <div className="font">
                 <h4>폰트</h4>
-                <ButtonSet data={fonts} type={font} onClick={handleFont} />
+                <DayFont />
             </div>
             <div className="line">
                 <h4>줄수</h4>
-                <Number num={line} handleNumber={handleLine}/>
+                <DayLines />
             </div>
         </div>
     )

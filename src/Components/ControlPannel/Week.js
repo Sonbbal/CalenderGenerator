@@ -2,20 +2,24 @@ import React, {useState} from 'react';
 import { ButtonSet, Switch, Number } from './modules';
 
 const Week = () => {
+    // 온오프
     const [ on, setOn ] = useState(true);
     const handleOn = () => {
         setOn(!on)
     }
+    // 데이터 타입
     const types = ['일', '일요일', 'Sun', 'SunDay']
     const [type, setType] = useState(types[0]);
     const handleType = ( type ) => {
         setType(type);
     }
+    // 폰트 종류
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
     const [font , setFont] = useState(fonts[0]);
     const handleFont = ( font ) => {
         setFont(font);
     }
+    // 폰트 크기
     const [fontSize, setFontSize] = useState(1);
     const handleSize = ( num ) => {
         let number = fontSize + num;

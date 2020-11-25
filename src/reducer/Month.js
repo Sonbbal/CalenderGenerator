@@ -22,7 +22,7 @@ export const changeMonthFont = (font) => {
 }
 export const changeMonthFontSize = (size) => {
     return ({
-        type: CHANGE_MONTH_TYPE,
+        type: CHANGE_MONTH_FONT_SIZE,
         size
     })
 }

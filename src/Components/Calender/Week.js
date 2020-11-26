@@ -1,15 +1,23 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const AWeek = styled.div`
+    font-size:${props => 1 + (props.fontSize*0.05)}rem;
+    font-family:${props => props.font}
+`;
 
 const Week = (props) => {
+    const data = props.data;
     return (
-        <div className={`week ${props.font}`}>
-            <div className="sun">{props.data[0]}</div>
-            <div className="mon">{props.data[1]}</div>
-            <div className="tue">{props.data[2]}</div>
-            <div className="wed">{props.data[3]}</div>
-            <div className="thu">{props.data[4]}</div>
-            <div className="fri">{props.data[5]}</div>
-            <div className="sat">{props.data[6]}</div>
+        <div className={`week`}>
+            {
+                data.map( 
+                    data => <AWeek 
+                    key={data}
+                    font={props.font} 
+                    fontSize={props.fontSize}
+                    >{data}</AWeek>)
+            }
         </div>
     )
 }

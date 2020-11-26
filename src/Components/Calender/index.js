@@ -1,31 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Month from './Month';
 import Week from './Week';
 import Days from './Days';
-import store from '../../store';
 import '../../css/calender.scss';
 import { connect } from 'react-redux';
 
 const Calender = () => {
     const data = {
-        month: {
-            type: [
-                '11',
-                '11월',
-                'Nov',
-                'November'
-            ]
-            ,
-            font:{
-                size: 10,
-                family: [
-                    'UhBeeSeulvely',
-                    'UhBeepuding',
-                    'UhBeeMiwan',
-                    'MapoFlowerIsland',
-                ]
-            }
-        },
         week: {
             type:{
                 simpleKorean: ['일','월', '화','수','목','금','토'],
@@ -86,6 +67,7 @@ const Calender = () => {
     //         }
     //         return monthLast;
     //     }
+
     const MonthContainer = connect(
         (state) => ({
             month:state.month.text,
@@ -93,11 +75,20 @@ const Calender = () => {
             fontSize:state.month.size
         })
     )(Month);
+
+    const WeekContainer = connect(
+        (state) => ({
+            data:state.week.data,
+            font:state.week.font,
+            fontSize:state.week.size
+        })
+    )(Week);
+    
     return (
         <div id="capture-box">
             <div className='calender'>
                 <MonthContainer />
-                <Week data={data.week.type.fullKorean} font={data.week.font.family.UhBeepuding} />
+                <WeekContainer />
                 <Days line={data.days.line} day={data.days.day}/>
             </div>
         </div>

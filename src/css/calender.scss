@@ -39,45 +39,6 @@
     width: 100%;
     text-align: center;
     padding:40px 0;
-    .size{ 
-        &-1 {
-            font-size: 1rem;   
-        }
-        &-2 {
-            font-size: 1.2rem;   
-           }
-        &-3 {
-            font-size: 1.5rem;   
-        }
-        &-4 {
-            font-size: 1.8rem;   
-        }
-        &-5 {
-            font-size: 2rem;
-        }
-        &-6 {
-            font-size: 2.2rem;
-        }
-        &-7 {
-            font-size: 2.4rem;
-        }
-        &-8 {
-            font-size: 2.6rem;
-        }
-        &-9 {
-            font-size: 2.8rem;
-        }
-        &-10 {
-            font-size: 3rem;
-        }
-    
-    }
-    .fonts{
-        &_UhBeeSeulvely{font-family: 'UhBeeSeulvely'};
-        &_UhBeepuding {font-family: 'UhBeepuding'};
-        &_UhBeeMiwan {font-family: 'UhBeeMiwan'};
-        &_MapoFlowerIsland {font-family: 'MapoFlowerIsland';}
-    }
 }
 
 // week 
@@ -95,12 +56,12 @@
         &:last-child {
             border-right: none;
         }
-    }
-    .sun {
-        color:red;
-    }
-    .sat {
-        color:blue;
+        &:first-child {
+            color:red;
+        }
+        &:last-child {
+            color:blue;
+        }
     }
 }
 

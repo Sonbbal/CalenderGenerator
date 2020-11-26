@@ -10,17 +10,23 @@ const Week = () => {
     )(Switch);
     
     // 데이터 타입
-    const types = ['일', '일요일', 'Sun', 'SunDay']
+    const simpleKorean = ['일','월', '화','수','목','금','토']
+    const fullKorean = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+    const simpleEnglish = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+    const fullEnglish = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Saturday']
+    const types = [simpleKorean[0], fullKorean[0], simpleEnglish[0], fullEnglish[0]]
     const WeekType = connect(
         (state) => ({data:types,type:state.week.text}),
         (dispatch) => ({onClick: (text) => dispatch({type:'CHANGE_WEEK_TYPE',text})})
     )(ButtonSet);
+
     // 폰트 종류
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
     const WeekFont = connect(
         (state) => ({data:fonts, type:state.week.font, typo:state.week.text}),
         (dispatch) => ({onClick: (font) => dispatch({type:'CHANGE_WEEK_FONT',font})})
     )(ButtonSetFont);
+    
     // 폰트 크기
     const WeekFontSize = connect(
         (state) => ({num:state.week.size}),

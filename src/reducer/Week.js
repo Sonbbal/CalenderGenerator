@@ -27,14 +27,19 @@ export const changeWeekhFontSize = (size) => {
         size
     })
 }
-
+// base data
+const simpleKorean = ['일','월', '화','수','목','금','토']
+const fullKorean = ['일요일','월요일','화요일','수요일','목요일','금요일','토요일']
+const simpleEnglish = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
+const fullEnglish = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
 //reducer
 
 const initialState = {
     visible: true,
-    text:'일요일',
+    text:fullKorean[0],
     font:'UhBeeSeulvely',
-    size:1
+    size:1,
+    data: fullKorean
 }
 
 const week = (state = initialState, action ) => {
@@ -44,10 +49,32 @@ const week = (state = initialState, action ) => {
             return Object.assign({},state,{
                 visible:!state.visible
             });
-        case CHANGE_WEEK_TYPE : 
-            return Object.assign({},state,{
-               text:action.text 
-            });
+        case CHANGE_WEEK_TYPE :
+            if(action.text === simpleKorean[0]) {
+                return Object.assign({},state,{
+                    text:action.text,
+                    data:simpleKorean
+                 });    
+            } else if(action.text === fullKorean[0] ){
+                return Object.assign({},state,{
+                    text:action.text,
+                    data:fullKorean
+                 });    
+            } else if(action.text === simpleEnglish[0] ){
+                return Object.assign({},state,{
+                    text:action.text,
+                    data:simpleEnglish
+                 });    
+            } else if(action.text === fullEnglish[0] ){
+                return Object.assign({},state,{
+                    text:action.text,
+                    data:fullEnglish
+                 });    
+            } else {
+                return Object.assign({},state,{
+                    text:action.text
+                 });
+            }  
         case CHANGE_WEEK_FONT :
             return Object.assign({},state,{
                 font:action.font

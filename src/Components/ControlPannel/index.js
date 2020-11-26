@@ -8,8 +8,10 @@ import html2canvas from 'html2canvas';
 
 const ControlPannel = ( props ) => {
     const capture = ( board ) => {
+        window.scrollTo(0,0);
         html2canvas(document.querySelector(board)).then(canvas => {
-            saveAs(canvas.toDataURL(),'calender.png')
+            console.dir(canvas);
+            saveAs(canvas.toDataURL(),'calender.jpg');
         });
 
         function saveAs(uri, filename) {
@@ -32,7 +34,7 @@ const ControlPannel = ( props ) => {
             <Week />
             <Day />
             <div className="capture-btn">
-                <Button onClick={capture} select="#capture-box">저장하기</Button>
+                <Button onClick={capture} select=".calender">저장하기</Button>
             </div>
         </div>
     )

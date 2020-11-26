@@ -2,19 +2,19 @@ import React from 'react';
 
 const Days = (props) => {
     const lines = new Array(props.line);
-    const daysArray = new Array(props.day);
+    const daysArray = props.data;
     for(let i = 0; i < props.line; i++ ) {
         lines[i] = i + 1;
     }
-    for(let i = 0; i < props.day; i++ ) {
-        daysArray[i] = i +1;
-    }
-    
     return(
-        <div className="days-container">
+        <div className={`days-container ${props.font}`}>
             {
                 daysArray.map(
-                    n => <Day key={n} line={lines} num={n} />
+                    n => <Day 
+                    key={n.id} 
+                    month={n.month} 
+                    line={lines} 
+                    num={n.number} />
                 )
             }
         </div>
@@ -23,10 +23,10 @@ const Days = (props) => {
 
 const Day = ( props ) => {
  return (
-    <div className={`day`}>
+    <div className={`day ${props.month}`}>
         <div>
-            <div className="day-header">
-                <p>{props.num ? props.num : ''}</p>
+            <div className={"day-header"}>
+                <p>{props.num}</p>
             </div>
             </div>
             <div className="day-body">

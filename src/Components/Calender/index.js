@@ -38,35 +38,7 @@ const Calender = () => {
             }
         }
     }
-    //  월 타입 데이터
-    // const nowDate = new Date();
-    //     const monthState =store.getState().month.text;
-    //     const nowMonth = () => {
-    //         const isMonth = nowDate.getMonth();
-    //         const monthNum = ['1','2','3','4','5','6','7','8','9','10','11','12'];
-    //         const monthNumKo = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
-    //         const monthEng = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
-    //         const monthEngFull = ['January','February','March','April','May','June','July','August','September','October','November','December']
-    //         let monthLast = '';
-    //         switch (monthState) {
-    //             case '1':
-    //                 monthLast = monthNum[isMonth]
-    //                 break ;
-    //             case '1월':
-    //                 monthLast = monthNumKo[isMonth]
-    //                 break ;
-    //             case 'Jan':
-    //                 monthLast = monthEng[isMonth]
-    //                 break ;
-    //             case 'January':
-    //                 monthLast = monthEngFull[isMonth]
-    //                 break ;
-    //             default:
-    //                 monthLast = monthNumKo[isMonth]
-    //                 break ;
-    //         }
-    //         return monthLast;
-    //     }
+
 
     const MonthContainer = connect(
         (state) => ({
@@ -84,12 +56,19 @@ const Calender = () => {
         })
     )(Week);
     
+    const DaysContainer = connect(
+        (state) => ({
+            data:state.date.days, 
+            line:state.day.lines, 
+            font:state.day.font
+        })
+    )(Days);
     return (
         <div id="capture-box">
             <div className='calender'>
                 <MonthContainer />
                 <WeekContainer />
-                <Days line={data.days.line} day={data.days.day}/>
+                <DaysContainer />
             </div>
         </div>
     )

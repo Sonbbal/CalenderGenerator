@@ -59,23 +59,24 @@ const generateMonth = (date) => {
 // 각 배열 합침
 const totalData = (now, prev, next, prevCount, nextCount ) => {
     let data = [];
-    // 이번달 
-    for(let i = 0; i < now.length; i++) {
-        data.push({month:'now', number:now[i]});
-        console.log('이번달 푸시')
-    };
+    let id = 1;
     // 이전달
     if(prevCount > 0){
         for(let i = 0; i < prevCount; i++ ){
-            data.unshift({month:'prev',number:prev[prev.length - 1 - i]});
-            console.log('이전달 푸시')
+            data.unshift({id:id,month:'prev',number:prev[prev.length - 1 - i]});
+            id++
         }
     }
+    // 이번달 
+    for(let i = 0; i < now.length; i++) {
+        data.push({id:id,month:'now', number:now[i]});
+        id++
+    };
     // 다음달
     if (nextCount > 0) {
         for(let i = 0; i < nextCount; i++){
-            data.push({month:'next',number:next[i]})
-            console.log('다음달 푸시')
+            data.push({id:id,month:'next',number:next[i]})
+            id++
         }
     }
     return data;

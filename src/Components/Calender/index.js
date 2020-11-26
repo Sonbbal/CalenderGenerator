@@ -56,10 +56,12 @@ const Calender = () => {
         }
     }
     return (
-        <div className='calender'>
-            <Month data={data.month} type={1} font={1}/>
-            <Week data={data.week.type.fullKorean} font={data.week.font.family.UhBeepuding} />
-            <Days line={data.days.line} day={data.days.day}/>
+        <div id="capture-box">
+            <div className='calender'>
+                <Month data={data.month} type={1} font={1}/>
+                <Week data={data.week.type.fullKorean} font={data.week.font.family.UhBeepuding} />
+                <Days line={data.days.line} day={data.days.day}/>
+            </div>
         </div>
     )
 }

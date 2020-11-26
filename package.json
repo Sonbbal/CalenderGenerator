@@ -20,6 +20,7 @@
     "redux-devtools-extension": "^2.13.8",
     "sass": "^1.29.0",
     "sass-loader": "^10.1.0",
+    "styled-components": "^5.2.1",
     "web-vitals": "^0.2.4"
   },
   "scripts": {

@@ -1,11 +1,18 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Header = styled.h2`
+    font-size: ${props => 1+(props.fontSize*0.2)}rem;
+    font-family: ${props => props.font}
+`;
 
 const Month = ( props ) => {
-    let typeNumber = props.type;
-    let fontNumber = props.font;
     return (
         <div className="month">
-            <h2 className={`size-${props.data.font.size} fonts_${props.data.font.family[fontNumber]}`}>{props.data.type[typeNumber]}</h2>
+            <Header 
+                font={props.font} 
+                fontSize={props.fontSize}
+            >{props.month}</Header>
         </div>
     )
 }

@@ -27,10 +27,14 @@ export const changeMonthFontSize = (size) => {
     })
 }
 
+const nowDate = new Date();
+const isMonth = nowDate.getMonth();
+const monthNum = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+
 // reducer 
 const initialState = {
     visible: true,
-    text:'1월',
+    text:monthNum[isMonth],
     font:'UhBeeSeulvely',
     size:1
 }

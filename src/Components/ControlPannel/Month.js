@@ -10,7 +10,13 @@ const Month = () => {
     )(Switch);
 
     // 월 타입
-    const types = ['1', '1월', 'Jan', 'January']
+    const nowDate = new Date();
+    const isMonth = nowDate.getMonth();
+    const monthNum = ['1','2','3','4','5','6','7','8','9','10','11','12'];
+    const monthNumKo = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+    const monthEng = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    const monthEngFull = ['January','February','March','April','May','June','July','August','September','October','November','December']
+    const types = [monthNum[isMonth], monthNumKo[isMonth], monthEng[isMonth], monthEngFull[isMonth]]
     const MonthType = connect(
         (state) => ({data:types,type:state.month.text}),
         (dispatch) => ({onClick: (text)=> dispatch({type:'CHANGE_MONTH_TYPE',text})})

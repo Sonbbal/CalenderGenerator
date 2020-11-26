@@ -1,5 +1,5 @@
 import React from 'react';
-import { ButtonSet, Switch, Number } from './modules';
+import { ButtonSet, Switch, Number,ButtonSetFont } from './modules';
 import {connect} from 'react-redux';
 
 const Month = () => {
@@ -19,9 +19,9 @@ const Month = () => {
     // 월 폰트
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
     const MonthFont = connect(
-        (state) => ({data:fonts,type:state.month.font}),
+        (state) => ({data:fonts,type:state.month.font, typo:state.month.text}),
         (dispatch) => ({onClick: (font)=> dispatch({type:'CHANGE_MONTH_FONT',font})})
-    )(ButtonSet);
+    )(ButtonSetFont);
     
     // 월 폰트사이즈
     const MonthFontSize = connect(

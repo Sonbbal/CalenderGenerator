@@ -1,5 +1,5 @@
 import React from 'react'
-import {ButtonSet,Number} from './modules';
+import {ButtonSetFont,Number} from './modules';
 import {connect} from 'react-redux';
 
 const Day = () => {
@@ -8,7 +8,7 @@ const Day = () => {
     const DayFont = connect(
         (state) => ({data:fonts, type:state.day.font}),
         (dispatch) => ({ onClick: (font) => dispatch({type:'CHANGE_DAY_FONT',font})})
-    )(ButtonSet);
+    )(ButtonSetFont);
 
 
     // 일 줄수 
@@ -21,7 +21,7 @@ const Day = () => {
             <h3>일</h3>
             <div className="font">
                 <h4>폰트</h4>
-                <DayFont />
+                <DayFont typo="15"/>
             </div>
             <div className="line">
                 <h4>줄수</h4>

@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
-import { ButtonSet, Switch, Number } from './modules';
+import { ButtonSet, Switch, Number, ButtonSetFont } from './modules';
 
 const Week = () => {
     // 온오프
@@ -18,9 +18,9 @@ const Week = () => {
     // 폰트 종류
     const fonts = ['UhBeeSeulvely','UhBeepuding','UhBeeMiwan','MapoFlowerIsland'];
     const WeekFont = connect(
-        (state) => ({data:fonts, type:state.week.font}),
+        (state) => ({data:fonts, type:state.week.font, typo:state.week.text}),
         (dispatch) => ({onClick: (font) => dispatch({type:'CHANGE_WEEK_FONT',font})})
-    )(ButtonSet);
+    )(ButtonSetFont);
     // 폰트 크기
     const WeekFontSize = connect(
         (state) => ({num:state.week.size}),

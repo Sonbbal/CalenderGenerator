@@ -6,9 +6,9 @@ export const Switch = ( props ) => {
     )
 }
 
-export const Button = ( props) => {
+export const Button = ( props ) => {
     return (
-        <div className="button-container" onClick={()=>props.onClick(props.select)}>
+        <div className={props.addClass ? `button-container ${props.addClass}`:"button-container"} onClick={()=>props.onClick(props.select)}>
             {
                 props.pressed ? 
                 <span className="button-pressed">
@@ -40,6 +40,25 @@ export const Button = ( props) => {
         </div>
    )
 }
+export const ButtonSetFont = (props) => {
+    const data = props.data;
+    return (
+        <div className="buttons-container">
+            {
+                data.map(
+                    num => <Button 
+                    key={num} 
+                    onClick={props.onClick}
+                    pressed={num === props.type}
+                    select={num}
+                    addClass={num}
+                    >{props.typo}</Button>
+                )
+            }
+        </div>
+   )
+}
+
 export const Number = (props) => {
     return (
         <div className="number">

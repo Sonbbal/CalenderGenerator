@@ -12,6 +12,9 @@ $base :  #ece8ac;
     background-color: $base;
     overflow-x: hidden;
     overflow-y: scroll;
+    transform: translateY(0);
+    transition-property: transform;
+    transition-duration: 0.5s;
     .month , .week {
         h4 {
             text-align: left;
@@ -38,6 +41,12 @@ $base :  #ece8ac;
     .capture-btn {
         margin-top:50px;
     }
+}
+.hide {
+    transform: translateY(100vh);
+    transition-property: transform;
+    transition-duration: 0.5s;
+
 }
 
 // modules 

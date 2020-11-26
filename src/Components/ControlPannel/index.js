@@ -6,7 +6,7 @@ import Day from './Day';
 import {Button} from './modules';
 import html2canvas from 'html2canvas';
 
-const ControlPannel = () => {
+const ControlPannel = ( props ) => {
     const capture = ( board ) => {
         html2canvas(document.querySelector(board)).then(canvas => {
             saveAs(canvas.toDataURL(),'calender.png')
@@ -26,7 +26,7 @@ const ControlPannel = () => {
         }
     }
     return (
-        <div className="control-pannel">
+        <div className={props.hide ?`control-pannel hide`: `control-pannel`}>
             <h2>컨트롤 패널</h2>
             <Month />
             <Week />

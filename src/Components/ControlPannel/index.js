@@ -9,10 +9,12 @@ import html2canvas from 'html2canvas';
 const ControlPannel = ( props ) => {
     const capture = ( board ) => {
         window.scrollTo(0,0);
+        document.querySelector(board).classList.add('calender_open');
         html2canvas(document.querySelector(board)).then(canvas => {
             console.dir(canvas);
             saveAs(canvas.toDataURL(),'calender.jpg');
         });
+        document.querySelector(board).classList.remove('calender_open');
 
         function saveAs(uri, filename) {
             let link = document.createElement('a');

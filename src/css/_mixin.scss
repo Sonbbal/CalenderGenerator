@@ -1,0 +1,13 @@
+@import './variables';
+
+@mixin mobile {
+    @media (max-width:#{$break-phone}) {
+        @content;
+    };
+};
+
+@mixin basic {
+    @media (min-width:#{$break-phone}){
+        @content;
+    };
+};

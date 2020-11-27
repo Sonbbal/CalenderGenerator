@@ -18,7 +18,9 @@ const Day = () => {
     )(Number);
     return (
         <div className="day">
-            <h3>일</h3>
+            <div className="title">
+                <h3>일</h3>
+            </div>
             <div className="font">
                 <h4>폰트</h4>
                 <DayFont typo="15"/>

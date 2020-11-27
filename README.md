@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+# 굿노트 달력 템플릿 생성기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`1.0.0`ver
 
-## Available Scripts
+### 개발자 노트
+굿노트 달력 템플릿 생성기입니다. 
+주요 기능은 월, 주, 일 별로 폰트 설정을 한 후 저장 할 수 있게 되어있습니다.
+이미지로 저장되며 바로 굿노트에 가져가서 사용하시면 됩니다. 
+다만 기준 월 변경이나 일수 변경은 다음 패치를 통해 제공될 예정입니다.
+기준 날짜는 `현재시간으로 설정` 되어있습니다. 참고 부탁드립니다.
+아이폰12 미니와 아이패드 8세대 제품으로 테스트 완료 했으며 발견되는 버그는 sonbbal20@gmail.com으로 메일 부탁드립니다.
 
-In the project directory, you can run:
 
-### `npm start`
+### 적용 폰트
+해당 폰트 들은 [눈누](https://noonnu.cc/) 에서 가져왔습니다.
+- 어비 슬기로운생활체
+- 어비 푸딩체
+- 어비 미완체
+- 마포꽃섬
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+폰트 수정 요청문의는 sonbbal20@gmail.com 로 요청 부탁드립니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### 기능
+- 월, 주 단위의 타입을 선택이 가능합니다. (ex. 월, 월요일, Mon, Monday)
+- 월, 주, 일 단위의 폰트 선택이 가능합니다. 
+- 월, 주 의 폰트의 크기를 선택 가능합니다. (기본 크기 1rem)
+- 일의 빈칸 조정이 가능합니다 (1~10 까지 가능)
+- 이미지로 저장이 가능합니다. (calender.png 로 저장 됩니다. )
 
-### `npm test`
+### 특이사항
+- 월과 주를 없앨 수 있는 기능 추가 예정입니다. 버튼은 있지만 기능 추가는 다음 패치에서 진행합니다. 
+- 버튼 콘테이너에 스크롤 기능은 아직 추가 예정입니다. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 패치예정
+- 월, 주 삭제 기능 (달력 판만 선택)
+- 월 부분을 타이틀로 변경 특정 TEXT을 입력해서 월 부분에 입력 가능하도록 할 예정입니다. 
+- 박스 스타일을 개발해서 스타일 선택 가능하게 추가할 예정입니다. 
+- 컨트롤 패널에 월, 주, 일 별로 스타일을 추가하고 패널에서 미리 볼 수 있게 변경
+- 기준 월 변경 기능
+- 배경이미지 추가 
+- 웹 폰트 직접 추가 기능

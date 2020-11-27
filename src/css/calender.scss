@@ -57,6 +57,11 @@
         border-right: 1px solid #000;
         border-left: 1px solid #000;
 
+        .next, .prev {
+            background: rgb(184, 184, 184);
+            color: rgb(100, 100, 100) ;
+        }
+
         .day {
             width: (100%/7);
             border-right: 1px solid #000;
@@ -75,10 +80,3 @@
         }
     }
 }
-
-
-// fonts 
-.UhBeeSeulvely{font-family: 'UhBeeSeulvely'};
-.UhBeepuding {font-family: 'UhBeepuding'};
-.UhBeeMiwan {font-family: 'UhBeeMiwan'};
-.MapoFlowerIsland {font-family: 'MapoFlowerIsland';}
